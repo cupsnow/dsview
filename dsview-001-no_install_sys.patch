@@ -1,0 +1,26 @@
+--- ../tmp/DSView-1.3.0/CMakeLists.txt	2023-07-18 11:33:42.000000000 +0800
++++ CMakeLists.txt	2023-08-29 09:18:04.218114631 +0800
+@@ -662,15 +662,15 @@
+ install(FILES DSView/icons/logo.svg DESTINATION share/pixmaps RENAME dsview.svg)
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "Linux")	
+-	install(FILES DSView/DSView.desktop DESTINATION /usr/share/applications RENAME dsview.desktop)
++#	install(FILES DSView/DSView.desktop DESTINATION /usr/share/applications RENAME dsview.desktop)
+ 	
+-	if(IS_DIRECTORY /usr/lib/udev/rules.d)
+-		install(FILES DSView/DreamSourceLab.rules DESTINATION /usr/lib/udev/rules.d RENAME 60-dreamsourcelab.rules)
+-	elseif(IS_DIRECTORY /lib/udev/rules.d)
+-		install(FILES DSView/DreamSourceLab.rules DESTINATION /lib/udev/rules.d RENAME 60-dreamsourcelab.rules)
+-	elseif(IS_DIRECTORY /etc/udev/rules.d)
+-		install(FILES DSView/DreamSourceLab.rules DESTINATION /etc/udev/rules.d RENAME 60-dreamsourcelab.rules)
+-	endif()
++#	if(IS_DIRECTORY /usr/lib/udev/rules.d)
++#		install(FILES DSView/DreamSourceLab.rules DESTINATION /usr/lib/udev/rules.d RENAME 60-dreamsourcelab.rules)
++#	elseif(IS_DIRECTORY /lib/udev/rules.d)
++#		install(FILES DSView/DreamSourceLab.rules DESTINATION /lib/udev/rules.d RENAME 60-dreamsourcelab.rules)
++#	elseif(IS_DIRECTORY /etc/udev/rules.d)
++#		install(FILES DSView/DreamSourceLab.rules DESTINATION /etc/udev/rules.d RENAME 60-dreamsourcelab.rules)
++#	endif()
+ 
+ endif()
+ 
