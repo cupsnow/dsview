@@ -1,0 +1,39 @@
+diff --git a/DSView/pv/dock/keywordlineedit.cpp b/DSView/pv/dock/keywordlineedit.cpp
+index a74c8c1..11c050a 100644
+--- a/DSView/pv/dock/keywordlineedit.cpp
++++ b/DSView/pv/dock/keywordlineedit.cpp
+@@ -120,7 +120,7 @@ void KeyLineEdit::wheelEvent(QWheelEvent *event)
+             int v = new_text.toInt();
+             int old_v = v;
+ 
+-            if (event->delta() > 0){
++            if (event->angleDelta().y() > 0){
+                 v++;
+             }
+             else{
+diff --git a/DSView/pv/mainframe.cpp b/DSView/pv/mainframe.cpp
+index f9e9158..ca5a45f 100644
+--- a/DSView/pv/mainframe.cpp
++++ b/DSView/pv/mainframe.cpp
+@@ -1106,7 +1106,7 @@ QWidget* MainFrame::GetBodyView()
+     return _mainWindow->GetBodyView();
+ }
+ 
+-bool MainFrame::nativeEvent(const QByteArray &eventType, void *message, long *result)
++bool MainFrame::nativeEvent(const QByteArray &eventType, void *message, qintptr *result)
+ {
+ #ifdef _WIN32
+ 
+diff --git a/DSView/pv/mainframe.h b/DSView/pv/mainframe.h
+index 3667480..85d33a6 100644
+--- a/DSView/pv/mainframe.h
++++ b/DSView/pv/mainframe.h
+@@ -114,7 +114,7 @@ protected:
+ 
+     void changeEvent(QEvent *event) override; 
+ 
+-    bool nativeEvent(const QByteArray &eventType, void *message, long *result) override;
++    bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
+  
+ signals:
+     void sig_ParentNativeEvent(int msg);
